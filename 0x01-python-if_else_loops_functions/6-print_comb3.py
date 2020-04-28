@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-for a in range(0, 9):
-   for c in range(a + 1, 10):
-        if a != 8:
-            print("{:d}{:d}".format(a, c), end=', ')
+for i in range(0, 9):
+    for c in range(i + 1, 10):
+        if i != 8:
+            print("{:d}{:d}".format(i, c), end=', ')
         else:
-            print("{:d}{:d}".format(a, c)
+            print("{:d}{:d}".format(i, c)
