@@ -9,7 +9,7 @@ if __name__ == "__main__":
         print("{:d} argument:".format(cross))
     else:
         print("{:d} arguments:".format(cross))
-    if numArg > 0:
+    if cross > 0:
         for i in range(len(list)):
             if i > 0:
                 print("{:d}: {}".format(i, list[i]))
