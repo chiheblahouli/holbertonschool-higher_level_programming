@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
-class Square():
-    """ A square class """
+
+class Square:
+    """define a square"""
     def __init__(self, size):
-        """ instalation with size """
+        """Initializes the square """
         self.__size = size
