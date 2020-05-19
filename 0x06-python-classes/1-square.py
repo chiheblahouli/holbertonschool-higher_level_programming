@@ -1,8 +1,15 @@
 #!/usr/bin/python3
+"""
+define a class Square
+"""
 
 
 class Square:
-    """a class Square that defines a square"""
+    """The summary line for a class docstring should fit on one line
+    """
+
     def __init__(self, size):
-        """nstantiation with size"""
+
+        """square class"""
+
         self.__size = size
