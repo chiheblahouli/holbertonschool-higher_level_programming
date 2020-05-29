@@ -21,10 +21,6 @@ class Rectangle:
         self.height = height
         type(self).number_of_instances += 1
 
-    def __del__(self):
-        type(self).number_of_instances -= 1
-        print('Bye rectangle...')
-
     @property
     def width(self):
         return self.__width
@@ -58,16 +54,20 @@ class Rectangle:
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        str = ""
+        rep = ""
         if self.__width == 0 or self.__height == 0:
-            return str
+            return rep
         for height in range(self.__height):
-            str += str(self.print_symbol)
+            rep += str(self.print_symbol)
             for width in range(self.__width - 1):
-                str += str(self.print_symbol)
+                rep += str(self.print_symbol)
             if height < self.__height - 1:
-                str += "\n"
-        return str
+                rep += "\n"
+        return rep
 
     def __repr__(self):
         return 'Rectangle(%s, %s)' % (self.__width, self.__height)
+
+    def __del__(self):
+        type(self).number_of_instances -= 1
+        print('Bye rectangle...')
