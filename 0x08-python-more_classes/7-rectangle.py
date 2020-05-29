@@ -54,16 +54,16 @@ class Rectangle:
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        rep = ""
+        str1 = ""
         if self.__width == 0 or self.__height == 0:
-            return rep
+            return str1
         for height in range(self.__height):
-            rep += str(self.print_symbol)
+            str1 += str(self.print_symbol)
             for width in range(self.__width - 1):
-                rep += str(self.print_symbol)
+                str1 += str(self.print_symbol)
             if height < self.__height - 1:
-                rep += "\n"
-        return rep
+                str1 += "\n"
+        return str1
 
     def __repr__(self):
         return 'Rectangle(%s, %s)' % (self.__width, self.__height)
