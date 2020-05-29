@@ -3,13 +3,14 @@
 It can return perimeter and area values.
 If width or height is equal to 0, return an empty string.
 Also__repr__ represents the rectangle and delete it.
-The number of intances of rectangle is calculated.
+The number of instances of rectangle is calculated.
+Public class attribute print_symbol.
 """
 
 
 class Rectangle:
     """ Rectangle class with width, height, area, perimeter
-    and an empty string.
+    and an empty string. Adding print_symbol.
     """
 
     number_of_instances = 0
