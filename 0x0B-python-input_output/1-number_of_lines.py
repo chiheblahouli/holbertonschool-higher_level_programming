@@ -1,13 +1,11 @@
 #!/usr/bin/python3
-"""
-number of lines
-"""
+""" returns the number of lines in the files """
 
 
 def number_of_lines(filename=""):
-    """ returns the number of lines of a text file """
-    with open(filename, 'r', encoding='utf8') as Fichier:
-         Count = 0  
-        for lines in Fichier:
+    """ counts the number of lines """
+    Count = 0
+    with open(filename, encoding="utf-8") as File:
+        for lines in File:
             Count += 1
-        return Count
+    return Count
