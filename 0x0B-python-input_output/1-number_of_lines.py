@@ -10,4 +10,4 @@ def number_of_lines(filename=""):
          Count = 0  
         for lines in Fichier:
             Count += 1
-    return Count
+        return Count
