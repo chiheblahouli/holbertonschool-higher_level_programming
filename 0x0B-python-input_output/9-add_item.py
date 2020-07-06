@@ -1,15 +1,17 @@
 #!/usr/bin/python3
-import sys
-"""
-adds all arguments to a Python
-"""
+""" A script that reads and inserts """
 
 
-save_to_json = __import__("7-save_to_json_file").save_to_json_file
-load_from_json = __import__("8-load_from_json_file").load_from_json_file
-try:
-    exp = load_from_json_file("add_item.json")
+if __name__ == "__main__":
+    import sys
+    import os
+    save_json = __import__('7-save_to_json_file').save_to_json_file
+    load_json = __import__('8-load_from_json_file').load_from_json_file
 
-except:
-    exp = []
-save_to_json_file(exp + sys.argv[1:], "add_item.json")
+    inputs = sys.argv
+    my_list = list()
+    if os.path.isfile("add_item.json"):
+        my_list = load_json("add_item.json")
+    for i in range(1, len(inputs)):
+        my_list.append(inputs[i])
+    save_json(my_list, "add_item.json")
