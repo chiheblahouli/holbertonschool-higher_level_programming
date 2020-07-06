@@ -3,10 +3,11 @@
 
 
 def read_lines(filename="", nb_lines=0):
-    """ print filename to open and read """
-    with open(filename, encoding="utf8") as Fichier:
+    """ function to read the number of lines"""
+    count = 0
+    with open(filename) as f:
         if nb_lines <= 0:
-            print("{}".format(Fichier.read()), end="")
+            print(f.read(), end="")
         else:
-            for lines in range(nb_lines):
-                print(file.readline(), end="")
+            for i in range(nb_lines):
+                print(f.readline(), end="")
