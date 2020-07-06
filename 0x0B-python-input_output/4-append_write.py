@@ -4,9 +4,8 @@ prints text
 """
 
 
-
 def append_write(filename="", text=""):
     """ write text """
     with open(filename, 'a', encoding='utf8') as Fichier:
-       N = Fichier.write(text)
+        N = Fichier.write(text)
     return(N)
