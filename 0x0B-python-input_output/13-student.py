@@ -1,28 +1,36 @@
 #!/usr/bin/python3
-""" Student class with json method """
+"""
+a class Student that defines a student
+"""
 
 
 class Student:
-    """ Student initialized by json """
-    first_name = None
-    last_name = None
-    age = None
+    """
+    Student class
+    """
 
     def __init__(self, first_name, last_name, age):
+        """
+        Constructor
+        """
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
     def to_json(self, attrs=None):
-        att = dict()
-        if not isinstance(attrs, list):
+        """
+        Retrieves dict
+        """
+        if attrs is None:
             return self.__dict__
-        for keys in attrs:
-            if not isinstance(keys, str):
-                return self.__dict__
-            if keys in self.__dict__:
-                att.update({keys: self.__dict__[keys]})
-        return att
+        my_dict = {}
+        for items in attrs:
+            if hasattr(self, items):
+                my_dict[items] = getattr(self, items)
+        return my_dict
 
     def reload_from_json(self, json):
-        self.__dict__ = json
+        """
+        Replaces attributes of the Student instance
+        """
+        self.__dict__.update(json)
