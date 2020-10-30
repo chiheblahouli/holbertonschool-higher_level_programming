@@ -1,3 +1,4 @@
+#!/usr/bin/node
 /* get factorial */
 const arg = process.argv[2];
 function fact (arg) {
