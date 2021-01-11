@@ -2,8 +2,7 @@
 """
 A request to URL fir displays
 """
-import urllib.error as error
-import urllib.request as request
+import urllib.request
 import sys
 
 if __name__ == "__main__":
