@@ -4,7 +4,10 @@ script that fetches an url using requests package
 """
 import requests
 
-answer = requests.get('https://intranet.hbtn.io/status')
-print("Body answer:\n\
-\t- type: {}\n\
-\t- content: {}".format(type(answer.text), answer.text))
+import requests
+if __name__ == "__main__":
+    url = 'https://intranet.hbtn.io/status'
+    r = requests.get(url)
+    print("Body response:")
+    print("\t- type: {}".format(type(r.text)))
+    print("\t- content: {}".format(r.text))
