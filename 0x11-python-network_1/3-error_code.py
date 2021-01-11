@@ -1,0 +1,15 @@
+#!/usr/bin/python3
+"""
+A request to URL fir displays
+"""
+import urllib.error as error
+import urllib.request as request
+import sys
+
+if __name__ == "__main__":
+    req = urllib.request.Request(sys.argv[1])
+    try:
+            with urllib.request.urlopen(req) as response:
+                    print(response.read().decode("utf-8"))
+    except urllib.error.URLError as e:
+            print("Error code: {}".format(e.code))
