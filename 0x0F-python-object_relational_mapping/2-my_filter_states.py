@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
-A script that list all states from database.
+python script that lists all states from the database hbtn_0e_0_usa with
+a given name
 """
-
 
 import MySQLdb
 from sys import argv
@@ -15,6 +15,7 @@ if __name__ == "__main__":
     id ASC".format(argv[4]))
     rows = cursor.fetchall()
     for row in rows:
+        if row[1] == argv[4]:
             print(row)
     cursor.close()
     db.close()
