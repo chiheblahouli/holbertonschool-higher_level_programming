@@ -1,9 +1,17 @@
 #!/usr/bin/python3
 """
-get value of x-Request-Id
+sends a POST request to the passed URL with the email as a parameter
 """
-from sys import argv
 import urllib.request
+import urllib.parse
+import sys
 if __name__ == "__main__":
-    with urllib.request.urlopen(argv[1]) as response:
-        print(response.getheader('X-Request-Id'))
+    url = sys.argv[1]
+    email_adr = sys.argv[2]
+
+    values = {'email': email_adr}
+    data = urllib.parse.urlencode(values)
+    data = data.encode('utf8')
+    req = urllib.request.Request(url, data)
+    with urllib.request.urlopen(req) as response:
+        print(response.read().decode())
